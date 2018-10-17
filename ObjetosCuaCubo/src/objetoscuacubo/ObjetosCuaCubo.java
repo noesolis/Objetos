@@ -20,7 +20,7 @@ public class ObjetosCuaCubo extends Cuadrado{
         
         while (!salir) {   
             System.out.println("                   ==== Menú ====");
-            System.out.println("1.- Cuadrado    2.- Cubo    3.- Cancelar    4.- Salir\\n");
+            System.out.println("1.- Cuadrado    2.- Cubo    3.- Cancelar    4.- Salir"+"\n");
            /* System.out.println("2.- Cubo");
             System.out.println("3.- Cancelar");
             System.out.println("4.- Salir\n");*/
@@ -65,14 +65,16 @@ public class ObjetosCuaCubo extends Cuadrado{
         Scanner valor=new Scanner(System.in);
         do{
             System.out.println("Introduce un el valor del lado: ");
-            String cadena = valor.nextLine();         
+            String cadena = valor.nextLine();  
+            System.out.println(cadena);
             try{                                    //Captura posible error de escritura de alguna letra
                 l=Double.parseDouble(cadena);
                 esDouble=true;
-                if(l==0){
+                if(l<=0){
                     esDouble=false;
                     System.out.println("¡Solo se pueden digitar números positivos!... ");
                 }
+                
 
             }catch (NumberFormatException nfe){
                 System.out.println("¡Solo se pueden digitar números positivos!... ");
